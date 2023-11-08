@@ -11,14 +11,14 @@ const UserForm: React.FC<Props> = ({onSubmit}) => {
     name: '',
     email: '',
     isActive: false,
-    userLevel: '',
+    userLevel: 'user',
   });
 
   const changeUser = (e) => {
     setUser((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
-      userLevel: e.target.value,
+      [e.target.userLevel]: e.target.value,
     }));
   };
 
@@ -91,7 +91,7 @@ const UserForm: React.FC<Props> = ({onSubmit}) => {
         </fieldset>
       </div>
       <div className="form-group">
-        <label htmlFor="userLevel">user level</label>
+        <label htmlFor="userLevel">User level</label>
         <select
           name="userLevel"
           id="userLevel"
