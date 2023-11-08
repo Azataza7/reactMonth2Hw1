@@ -44,6 +44,8 @@ const UserForm = () => {
           <option value="admin">admin</option>
         </select>
       </div>
+
+      <button type="submit" className="btn btn-primary mt-2">Create</button>
     </form>
   );
 };
