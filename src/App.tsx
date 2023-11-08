@@ -12,7 +12,7 @@ const App = () => {
   ]);
 
   const addUser = (user) => {
-    setUsers((prevState) => [...prevState, user]);
+    setUsers((prevState) => [user ,...prevState]);
   };
 
   return (

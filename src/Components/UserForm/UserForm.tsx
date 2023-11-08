@@ -22,6 +22,13 @@ const UserForm: React.FC<Props> = ({onSubmit}) => {
     }));
   };
 
+  const changeCheckbox = (e) => {
+    setUser((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value === 'Yes' ? e.target.checked : !e.target.checked
+    }));
+  };
+
   const onFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmit({
@@ -41,6 +48,7 @@ const UserForm: React.FC<Props> = ({onSubmit}) => {
           className="form-control"
           value={user.name}
           onChange={changeUser}
+          required
         />
       </div>
       <div className="form-group">
@@ -52,11 +60,34 @@ const UserForm: React.FC<Props> = ({onSubmit}) => {
           className="form-control"
           value={user.email}
           onChange={changeUser}
+          required
         />
       </div>
       <div className="form-group">
         <label htmlFor="isActive">Is Active</label>
         <fieldset>
+          <div>
+            <input
+              type="checkbox"
+              id="isActive"
+              name="isActive"
+              value="Yes"
+              checked={user.isActive}
+              onChange={changeCheckbox}
+            />
+            <label htmlFor="isActiveYes">Yes</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="isActive"
+              name="isActive"
+              value="No"
+              checked={!user.isActive}
+              onChange={changeCheckbox}
+            />
+            <label htmlFor="isActive">No</label>
+          </div>
         </fieldset>
       </div>
       <div className="form-group">
@@ -67,6 +98,7 @@ const UserForm: React.FC<Props> = ({onSubmit}) => {
           className="form-control"
           value={user.userLevel}
           onChange={changeUser}
+          required
         >
           <option value="user">user</option>
           <option value="editor">editor</option>
