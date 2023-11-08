@@ -1,9 +1,12 @@
 import React from 'react';
+import UserItem from './UserItem';
 
 const Users = () => {
   return (
     <div>
-      users
+      <UserItem/>
+      <UserItem/>
+      <UserItem/>
     </div>
   );
 };

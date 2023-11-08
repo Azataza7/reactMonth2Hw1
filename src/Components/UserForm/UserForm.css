@@ -1,0 +1,8 @@
+fieldset {
+  display: flex;
+  gap: 10px;
+}
+
+.form-user {
+  padding-left: 20px;
+}
